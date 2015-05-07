@@ -1,15 +1,19 @@
-".container": {
-	backgroundColor:"white"
+//<!--Alonso-->
+
+".container[platform=ios]": {
+	top: 20,
+	backgroundColor:"white",
+	statusBarStyle:Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT,
+	orientationModes: [Ti.UI.PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT,Ti.UI.UPSIDE_PORTRAIT],
+	navBarHidden: true,
 }
 
-"Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000"
+".container[platform=android]": {
+	top: 20,
+	backgroundColor:"white",
+	orientationModes: [Ti.UI.PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT],
+	navBarHidden: true,
+	exitOnClose: true
 }
 
-"#label": {
-	font: {
-		fontSize: 12
-	}
-}
+//<!--Alonso-->
