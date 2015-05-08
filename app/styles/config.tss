@@ -1,14 +1,14 @@
 //<!--Alonso-->
 
-//Do not need these TSS elements.
+
 "#mainView":{
 	layout: 'vertical',
-	backgroundColor: 'white'
+	backgroundColor: '#253640'
 },
 "#mainTopBar":{
 	width: Ti.UI.FILL,
 	height: "60dp",
-	backgroundColor: '#00b100',
+	backgroundColor: '#0096d6',
 	layout: 'horizontal'
 },
 "#menuButton":{
@@ -21,7 +21,7 @@
 		fontSize : 28,
 		fontWeight : 'bold',		
 	},
-	left : '25%',
+	left : '47dp',
 },
 "#logoutBtn" : {
 	top : '400dp',

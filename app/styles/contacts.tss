@@ -3,19 +3,20 @@
 //this is the tableView in the mainView.xml
 "#mainView":{
 	layout: 'vertical',
-	backgroundColor: 'white',
+	backgroundColor: '#253640',
 },
 //This is the blue bar in the mainview.xml
 "#mainTopBar":{
 	width: Ti.UI.FILL,
 	height: "60dp",
-	backgroundColor: '#00b100',
+	backgroundColor: '#0096d6',
 	layout: 'horizontal'
 },
 //this is the picture of the button.
 "#menuButton":{
 	width: "60dp",
-	height: "60dp"
+	height: "60dp",
+	backgroundColor : "#0ee67b"
 },
 "#header" : {
 	color : '#8C000000',
@@ -23,6 +24,6 @@
 		fontSize : 28,
 		fontWeight : 'bold',		
 	},
-	left : '25%',
+	left : '47dp',
 }
 //<!--Alonso-->

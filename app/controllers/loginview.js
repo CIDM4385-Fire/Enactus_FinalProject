@@ -2,6 +2,13 @@ var args = arguments[0] || {};
 
 
 $.doLoginBtn.addEventListener('click', doLoginBtnClicked);
+$.cancelLoginBtn.addEventListener('click', cancelLoginBtn);
+
+function cancelLoginBtn() {
+	$.login.close();
+	var index = Alloy.createController("index").getView();
+	index.close();
+}
 
 function doLoginBtnClicked() {
 

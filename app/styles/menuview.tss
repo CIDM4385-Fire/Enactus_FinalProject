@@ -9,7 +9,7 @@
 "#menuTopBar":{
 	width: Ti.UI.FILL,
 	height: "60dp",
-	backgroundColor: '#00b100',
+	backgroundColor: '#ffd200',
 	layout: 'horizontal'
 },
 //This affects the TableViewRow in menuview.xml

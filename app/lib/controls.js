@@ -19,13 +19,13 @@ exports.getMenuButton=function(args){
 	var v=Ti.UI.createView({
 		height: args.h,
 		width: args.w,
-		backgroundColor: '#00b100'
+		backgroundColor: '#0096d6'
 	});
 	//This is the slider picture that is moving.
 	var b=Ti.UI.createView({
 		height: "20dp",
 		width: "20dp",
-		backgroundImage: "/3bar.png"
+		backgroundImage: "/logo.png"
 	});
 	
 	//add the picture of the slider.png to the view.

@@ -35,8 +35,6 @@ mainView.menuButton.addEventListener('click',function(){
 	$.drawermenu.menuOpen=!$.drawermenu.menuOpen;
 }); // method is exposed by widget
 
-//Bryan's code
-
 $.drawermenu.init({
     menuview:menuView.getView(),
     mainview:mainView.getView(),
@@ -44,7 +42,7 @@ $.drawermenu.init({
     parent: $.index
 });
 
-
+//Bryan's code
 //$.list.setMarker({sectionIndex:0,itemIndex:100});
 
 var plainTemplate = {
@@ -53,12 +51,13 @@ var plainTemplate = {
         bindId: "area",
         properties: {
             backgroundColor: "white",
-            right: "10dp",
+            right: "5dp",
             top: "10dp",
             bottom: "12dp",
             left: "75dp",
-            borderColor : 'black',
-            borderRadius: "5dp",
+            borderColor : '#0ee67b',
+            borderWidth : "2dp",
+            borderRadius: "3dp",
             separatorColor: "#253640"
         }
     }, {
@@ -72,7 +71,7 @@ var plainTemplate = {
                 fontFamily: "Arial",
                 fontSize: "18dp"
             },
-            left: "120dp",
+            left: "100dp",
             top: "20dp"
         },
         separatorColor: "#253640"
@@ -87,7 +86,7 @@ var plainTemplate = {
                 fontFamily: "Arial",
                 fontSize: "14dp"
             },
-            left: "100dp",
+            left: "80dp",
             top: "50dp",
             bottom : "12dp"
         }
@@ -96,10 +95,14 @@ var plainTemplate = {
     	bindId: "date",
     	properties:{
     	height:"50dp",
-    	left: "6dp",
+    	left: "10dp",
     	width: "60dp",
-    	top: "5dp",
+    	top: "10dp",
+    	bottom : "12dp",
     	right: "200dp", 
+    	borderColor : '#0ee67b',
+        borderWidth : "2dp",
+        borderRadius: "3dp",
     	color: "black",
     	borderRadius: "3dp",
     	backgroundColor : "white",
@@ -161,6 +164,7 @@ var scrollableView = Ti.UI.createScrollableView({
  sectionView = Ti.UI.createView();
  sectionView.add(scrollableView);
  mainView.mainView.add(sectionView);
+//end of bryan's code.
 
 //end of mainView and menuView controllers and information----------------------------------------------------------------------------------------------------
 
@@ -195,6 +199,7 @@ configView.menuButton.addEventListener('click',function(){
 
 configView.logoutBtn.addEventListener('click', logoutBtnClicked);
 
+
 function logoutBtnClicked()  {
 		//override the success variable to equal to false and then open up the index.
 		//var index = Alloy.createController("index").getView();
@@ -224,10 +229,89 @@ projects.menuButton.addEventListener('click',function(){
 	$.drawermenu.menuOpen=!$.drawermenu.menuOpen;
 }); // method is exposed by widget
 
+projects.button1.addEventListener('click', doClick1);
+projects.button2.addEventListener('click', doClick2);
+projects.button3.addEventListener('click', doClick3);
+projects.button4.addEventListener('click', doClick4);
+projects.button5.addEventListener('click', doClick5);
+projects.button6.addEventListener('click', doClick6);
+
+
+
+function doClick1() {
+		var win = Titanium.UI.createWindow({
+			title: 'PROJECT 1',
+		});
+			var info=Titanium.UI.createButton({
+			title:'Project 1 Information Goes Here',
+			width: Ti.UI.SIZE,
+			height: Ti.UI.SIZE
+		});
+		win.add(info);
+		win.open();
+};
+function doClick2() {
+		var win = Titanium.UI.createWindow({
+			title: 'PROJECT 2',
+		});
+			var info=Titanium.UI.createButton({
+			title:'Project 2 Information Goes Here',
+			width: Ti.UI.SIZE,
+			height: Ti.UI.SIZE
+		});
+		win.add(info);
+		win.open();
+};
+function doClick3() {
+		var win = Titanium.UI.createWindow({
+			title: 'PROJECT 3',
+		});
+			var info=Titanium.UI.createButton({
+			title:'Project 3 Information Goes Here',
+			width: Ti.UI.SIZE,
+			height: Ti.UI.SIZE
+		});
+		win.add(info);
+		win.open();
+};
+function doClick4() {
+		var win = Titanium.UI.createWindow({
+			title: 'PROJECT 4',
+		});
+			var info=Titanium.UI.createButton({
+			title:'Project 4 Information Goes Here',
+			width: Ti.UI.SIZE,
+			height: Ti.UI.SIZE
+		});
+		win.add(info);
+		win.open();
+};
+function doClick5() {
+		var win = Titanium.UI.createWindow({
+			title: 'PROJECT 5',
+		});
+			var info=Titanium.UI.createButton({
+			title:'Project 5 Information Goes Here',
+			width: Ti.UI.SIZE,
+			height: Ti.UI.SIZE
+		});
+		win.add(info);
+		win.open();
+};
+function doClick6() {
+		var win = Titanium.UI.createWindow({
+			title: 'PROJECT 6',
+		});
+			var info=Titanium.UI.createButton({
+			title:'Project 6 Information Goes Here',
+			width: Ti.UI.SIZE,
+			height: Ti.UI.SIZE
+		});
+		win.add(info);
+		win.open();
+};
 
 //end of project view---------------------------------------------------------------------------------------------------------------------------------------
-
-
 
 
 //calendar view and controller--------------------------------------------------------------------------------------------------------------------------------
@@ -266,8 +350,6 @@ industry.menuButton.addEventListener('click',function(){
 
 
 
-
-
 //beginning of the contacts view and controller-------------------------------------------------------------------------------------------------------------------
 contacts.menuButton.add(controls.getMenuButton({
                 h: '60',
@@ -285,16 +367,32 @@ contacts.menuButton.addEventListener('click',function(){
 var plainTemplate1 = {
     childTemplates: [ {
         type: "Ti.UI.Label",
-        bindId: "username",
+        bindId: "area",
         properties: {
-            backgroundColor: "#00B100",
-            width: "260dp",
-            top: "11dp",
-            bottom: "10dp",
-            left: "100dp",
-            borderRadius: "5dp",
+            backgroundColor: "white",
+            right: "10dp",
+            top: "10dp",
+            bottom: "12dp",
+            left: "75dp",
+            borderColor : '#0ee67b',
+            borderWidth : "2dp",
+            borderRadius: "3dp",
             separatorColor: "#253640"
         }
+    },    
+       {
+        type: "Ti.UI.Label",
+        bindId: "username",
+       properties: {
+            color: "#565656",
+            font: {
+                fontFamily: "Arial",
+                fontSize: "16dp"
+            },
+            left: "120dp",
+            top: "20dp"
+        },
+        separatorColor: "#253640"
     }, {
         type: "Ti.UI.Label",
         bindId: "email",
@@ -302,23 +400,23 @@ var plainTemplate1 = {
             color: "#565656",
             font: {
                 fontFamily: "Arial",
-                fontSize: "14dp"
+                fontSize: "16dp"
             },
-            left: "100dp",
-            top: "20dp"
+            left: "120dp",
+            top: "50dp"
         },
         separatorColor: "#253640"
     }, {
         type: "Ti.UI.Label",
         bindId: "firstname",
         properties: {
-            color: "gray",
+            color: "black",
             font: {
                 fontFamily: "Arial",
                 fontSize: "14dp"
             },
-            left: "100dp",
-            top: "70dp"
+            left: "140dp",
+            top: "74dp"
         }
     }, {
         type: "Ti.UI.Label",
@@ -362,13 +460,12 @@ Cloud.Users.show({
         var user = e.users[0];
   
     data1.push({
+            	area : {},
             	username : { text: user.username},
             	email: { text: user.email},
             	firstname : {text: user.first_name},
             	lastname : {text: user.last_name},
-    	
- 
-        
+    	    
     });
 }
      section1.setItems(data1);
@@ -386,10 +483,6 @@ var scrollableView1 = Ti.UI.createScrollableView({
  sectionView1.add(scrollableView1);
  contacts.mainView.add(sectionView1);
  
- 
-
-
-
 //end of the contacts view and controller and information--------------------------------------------------------------------------------------------------------
 
 
@@ -399,8 +492,6 @@ $.drawermenu.init({
     duration:200,
     parent: $.index
 });
-
-
 
 //variable to controller that open/close slide
 var activeView = 1;
@@ -517,8 +608,4 @@ var displayLoginView = Alloy.createController("loginview").getView();
 displayLoginView.open();
 
 }
-
-
-
-
 //<!--Alonso-->
