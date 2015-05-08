@@ -1,12 +1,21 @@
 //<!--Alonso-->
+var controls=require('controls');
+
+var menuView=controls.getMenuView();
+var mainView=controls.getMainView();
+
 
 //main view and menu view controllers and information.-----------------------------------------------------------------------------------------
 //pulls the information from the 'lib' folder.
-var controls=require('controls');
+
+
+var Cloud = require('ti.cloud');
+Cloud.debug = true;
+
+
+
 
 // get main and menu view as objects. pulls from the controls.js
-var menuView=controls.getMenuView();
-var mainView=controls.getMainView();
 
 //attach event listener to menu button
 //goes to the mainView function in the controls.js
@@ -17,6 +26,9 @@ var mainView=controls.getMainView();
 
 //create an if statement that only shows all of this bottom code if the success is true
 //if it's false, we don't show this and open up a login view.
+
+if(Alloy.Globals.loggedIn == true){
+
 mainView.menuButton.add(controls.getMenuButton({
 	h: '60',
 	w: '60'
@@ -29,8 +41,14 @@ mainView.menuButton.addEventListener('click',function(){
 }); // method is exposed by widget
 
 //Bryan's code
-var Cloud = require('ti.cloud');
-Cloud.debug = true;
+
+$.drawermenu.init({
+    menuview:menuView.getView(),
+    mainview:mainView.getView(),
+    duration:200,
+    parent: $.index
+});
+
 
 
 
@@ -113,16 +131,7 @@ var section = Ti.UI.createListSection();
  var data = [];
  var sectionViews = [];
 
-var eventList = ['554af4834fe125098c01efb1',
-				 '554af681ac4547b901106992', 
-				 '554af69c08c91edb090f5429', 
-				 '554af6b808c91edb110f598f', 
-				 '554af6d9de9cf34db91050e2', 
-				 '554af6f37eead2ef310e465c', 
-				 '554af70cde9cf34db10f859f', 
-				 '554af72ea598a1097501eaaf', 
-				 '554af74108c91edb110f5a79', 
-				 '554af755de9cf34db91054fc' ];
+var eventList = ['554c492a4fe125098c09187b'];
 
 
 for ( var i = 0; i < eventList.length; i++) {
@@ -159,7 +168,7 @@ var scrollableView = Ti.UI.createScrollableView({
  sectionView = Ti.UI.createView();
  sectionView.add(scrollableView);
  mainView.mainView.add(sectionView);
- 
+
 //end of mainView and menuView controllers and information----------------------------------------------------------------------------------------------------
 
 
@@ -189,12 +198,7 @@ configView.menuButton.addEventListener('click',function(){
 	$.drawermenu.menuOpen=!$.drawermenu.menuOpen;
 }); // method is exposed by widget
 
-$.drawermenu.init({
-    menuview:menuView.getView(),
-    mainview:mainView.getView(),
-    duration:200,
-    parent: $.index
-});
+
 
 configView.logoutBtn.addEventListener('click', logoutBtnClicked);
 
@@ -224,12 +228,7 @@ projects.menuButton.addEventListener('click',function(){
 	$.drawermenu.menuOpen=!$.drawermenu.menuOpen;
 }); // method is exposed by widget
 
-$.drawermenu.init({
-    menuview:menuView.getView(),
-    mainview:mainView.getView(),
-    duration:200,
-    parent: $.index
-});
+
 //end of project view---------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -249,12 +248,7 @@ calendar.menuButton.addEventListener('click',function(){
 	$.drawermenu.menuOpen=!$.drawermenu.menuOpen;
 }); // method is exposed by widget
 
-$.drawermenu.init({
-    menuview:menuView.getView(),
-    mainview:mainView.getView(),
-    duration:200,
-    parent: $.index
-});
+
 //end of the calendar view-----------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -271,12 +265,7 @@ industry.menuButton.addEventListener('click',function(){
 	$.drawermenu.menuOpen=!$.drawermenu.menuOpen;
 }); // method is exposed by widget
 
-$.drawermenu.init({
-    menuview:menuView.getView(),
-    mainview:mainView.getView(),
-    duration:200,
-    parent: $.index
-});
+
 //end of the industry view----------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -366,8 +355,7 @@ var section1 = Ti.UI.createListSection();
  var data1 = [];
  var sectionViews1 = [];
 
-var userList = ['55412c21de9cf38e0ebd789e', 
-				'55412c5508c91ee918ed9a6d'];
+var userList = ['554c490b7eead2291705f43c'];
 
 
 for ( var i = 0; i < userList.length; i++) {
@@ -405,6 +393,10 @@ var scrollableView1 = Ti.UI.createScrollableView({
  
 
 
+
+//end of the contacts view and controller and information--------------------------------------------------------------------------------------------------------
+
+
 $.drawermenu.init({
     menuview:menuView.getView(),
     mainview:mainView.getView(),
@@ -412,7 +404,6 @@ $.drawermenu.init({
     parent: $.index
 });
 
-//end of the contacts view and controller and information--------------------------------------------------------------------------------------------------------
 
 
 //variable to controller that open/close slide
@@ -522,9 +513,16 @@ menuView.menuTable.addEventListener('click',function(e){
     // on Android the event is received by the label, so watch out!
     Ti.API.info(e.rowData.id); 
 });
-
-
-
+} else {
+	
 $.index.open();
+
+var displayLoginView = Alloy.createController("loginview").getView();
+displayLoginView.open();
+
+}
+
+
+
 
 //<!--Alonso-->

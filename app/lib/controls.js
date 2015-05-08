@@ -1,6 +1,8 @@
 //<!--Alonso-->
 
 var Alloy=require('alloy');
+
+
 //uses the mainview.xml to create a controller.
 exports.getMainView=function(){
 	return Alloy.createController('mainview');

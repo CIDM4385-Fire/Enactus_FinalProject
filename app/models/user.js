@@ -21,9 +21,6 @@ exports.definition = {
           if (e.success) {
             var user = e.users[0];
             
-            //Delete the alert below once we get the application running.
-			alert("You have successfully logged in!");
-			
 			
             // save session id
             Ti.App.Properties.setString('sessionId', e.meta.session_id);
