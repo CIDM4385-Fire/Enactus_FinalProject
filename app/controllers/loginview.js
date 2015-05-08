@@ -14,8 +14,6 @@ function doLoginBtnClicked() {
 
 function userActionResponseHandler(_resp) {
 	if (_resp.success === true) {
-		
-		
 
 		// Do stuff after successful login.
 		Alloy.Globals.loggedIn = true;

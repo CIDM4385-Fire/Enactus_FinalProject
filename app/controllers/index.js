@@ -4,16 +4,11 @@ var controls=require('controls');
 var menuView=controls.getMenuView();
 var mainView=controls.getMainView();
 
-
 //main view and menu view controllers and information.-----------------------------------------------------------------------------------------
 //pulls the information from the 'lib' folder.
 
-
 var Cloud = require('ti.cloud');
 Cloud.debug = true;
-
-
-
 
 // get main and menu view as objects. pulls from the controls.js
 
@@ -48,8 +43,6 @@ $.drawermenu.init({
     duration:200,
     parent: $.index
 });
-
-
 
 
 //$.list.setMarker({sectionIndex:0,itemIndex:100});
@@ -204,8 +197,11 @@ configView.logoutBtn.addEventListener('click', logoutBtnClicked);
 
 function logoutBtnClicked()  {
 		//override the success variable to equal to false and then open up the index.
-		var index = Alloy.createController("index").getView();
-		index.open();
+		//var index = Alloy.createController("index").getView();
+		//index.open();
+		//Alloy.Globals.loggedIn = false;
+		var displayLoginView = Alloy.createController("loginview").getView();
+		displayLoginView.open();
   };
 
 
