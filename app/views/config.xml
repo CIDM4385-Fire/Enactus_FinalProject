@@ -12,7 +12,8 @@
         </View>
         
         <!--This is the settings view of the project-->
-    <Button id='logoutBtn'>Logout</Button>
+
+
     </View>
 
     

@@ -15,7 +15,8 @@ var mainView=controls.getMainView();
 //finish this
 
 
-
+//create an if statement that only shows all of this bottom code if the success is true
+//if it's false, we don't show this and open up a login view.
 mainView.menuButton.add(controls.getMenuButton({
 	h: '60',
 	w: '60'
@@ -198,7 +199,7 @@ $.drawermenu.init({
 configView.logoutBtn.addEventListener('click', logoutBtnClicked);
 
 function logoutBtnClicked()  {
-		
+		//override the success variable to equal to false and then open up the index.
 		var index = Alloy.createController("index").getView();
 		index.open();
   };
