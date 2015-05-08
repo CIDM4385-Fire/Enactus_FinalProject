@@ -194,6 +194,17 @@ $.drawermenu.init({
     duration:200,
     parent: $.index
 });
+
+configView.logoutBtn.addEventListener('click', logoutBtnClicked);
+
+function logoutBtnClicked()  {
+		
+		var index = Alloy.createController("index").getView();
+		index.open();
+  };
+
+
+
 //end of the settings view and controller-------------------------------------------------------------------------------------------------------------------
 
 

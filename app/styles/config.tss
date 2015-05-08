@@ -22,5 +22,13 @@
 		fontWeight : 'bold',		
 	},
 	left : '25%',
+},
+"#logoutBtn" : {
+	top : '400dp',
+	width : '70%',
+	height : '52dp',
+	color : 'white'
 }
+
+
 //<!--Alonso-->
